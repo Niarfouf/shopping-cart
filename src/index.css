@@ -1,1 +1,252 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+#root {
+    min-height: 100vh;
+    background-color: rgba(255, 220, 220, 0.616);
+    display: flex;
+    flex-direction: column;
 
+    justify-content: start;
+}
+li {
+    list-style: none;
+}
+h1 {
+    padding: 0.8rem 4rem;
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    font-weight: normal;
+    font-family: 'Fredericka the Great', 'Roboto', sans-serif;
+    background-color: rgba(255, 110, 141, 0.671);
+    border-radius: 1rem;
+}
+header {
+    width: 100%;
+    background-color: rgba(255, 110, 141, 0.671);
+    position: sticky;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+ul {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    align-items: center;
+}
+.right-arrow,
+.left-arrow {
+    width: 100px;
+    fill: rgba(255, 110, 141, 0.671);
+    display: block;
+}
+.drop-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    min-width: 70px;
+    background-color: rgb(255, 175, 192);
+    padding: 10px;
+    gap: 10px;
+    visibility: hidden;
+    opacity: 0;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Fredericka the Great', 'Roboto', sans-serif;
+}
+.cart-button,
+.drop-button,
+button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: 'Fredericka the Great', 'Roboto', sans-serif;
+}
+.cart-button:hover,
+.drop-button:hover,
+a:hover {
+    cursor: pointer;
+
+    border-radius: 0.5rem;
+}
+.drop-button:hover,
+a:hover {
+    background-color: rgba(165, 42, 42, 0.63);
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(255, 110, 141, 0.671);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.filled {
+    background-color: rgba(255, 110, 141, 0.671);
+}
+.image0 {
+    background-image: url('./images/electronics.jpg');
+    background-size: 100% 100%;
+}
+.image1 {
+    background-image: url('./images/jewelry.jpg');
+    background-size: 100%;
+}
+.image2,
+.men {
+    background-image: url("./images/men's-cloth.jpg");
+    background-size: 100%;
+}
+.image3 {
+    background-image: url("./images/women's-cloth.jpg");
+    background-size: 100%;
+}
+
+main {
+    flex: auto;
+    display: flex;
+    justify-content: center;
+}
+.caroussel {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+.caroussel-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: auto;
+}
+.caroussel-info {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.shop-link {
+    align-self: center;
+    position: relative;
+    bottom: 30%;
+    background-color: rgba(128, 128, 128, 0.781);
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.shop-link:hover {
+    background-color: rgba(165, 42, 42, 0.801);
+}
+.shop {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+img {
+    height: 150px;
+    width: auto;
+    max-width: 222px;
+}
+
+.item-cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+    gap: 3rem;
+
+    padding: 0 4rem 2rem 4rem;
+    justify-content: center;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 270px;
+    background-color: white;
+    padding: 1.3rem;
+    border-radius: 1rem;
+    height: 350px;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.493);
+}
+h2 {
+    margin: 2rem;
+    font-family: 'Fredericka the Great', 'Roboto', sans-serif;
+    color: brown;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.add-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.7rem;
+}
+h3 {
+    font-size: 0.9rem;
+}
+input {
+    border: none;
+    background-color: rgba(255, 220, 220, 0.616);
+    text-align: center;
+    width: 50px;
+}
+.right-arrow-input,
+.left-arrow-input {
+    width: 40px;
+    fill: rgba(255, 110, 141, 0.671);
+}
+svg {
+    display: block;
+}
+label {
+    display: none;
+    visibility: hidden;
+}
+.price {
+    text-align: end;
+}
+.add-button {
+    background-color: rgba(255, 110, 141, 0.671);
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+.cart {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    min-width: 70px;
+    background-color: rgb(255, 175, 192);
+    padding: 10px;
+    gap: 10px;
+    visibility: hidden;
+    opacity: 0;
+}
+.show {
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+    transition: all 200ms ease-in-out;
+}

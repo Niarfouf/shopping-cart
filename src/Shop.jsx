@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom'
+
 import { useState, useEffect } from 'react'
 import Card from './Card'
 
-export default function Shop() {
+export default function Shop({ addCartItems }) {
     const { category } = useParams()
     const [items, setItems] = useState([])
     useEffect(() => {
@@ -19,22 +20,24 @@ export default function Shop() {
         }
         fetchItems()
     }, [category])
-
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1)
+    }
     return (
         <>
-            <h1>test shop</h1>
-            <div className="item-cards">
-                {items.map((item) => {
-                    return (
-                        <Card
-                            key={item.id}
-                            title={item.title}
-                            price={item.price}
-                            description={item.description}
-                            imageUrl={item.image}
-                        ></Card>
-                    )
-                })}
+            <div className={`shop ${category}`}>
+                <h2>{capitalizeFirstLetter(category)}</h2>
+                <div className="item-cards">
+                    {items.map((item) => {
+                        return (
+                            <Card
+                                key={item.id}
+                                item={item}
+                                addItemInList={addCartItems}
+                            ></Card>
+                        )
+                    })}
+                </div>
             </div>
         </>
     )

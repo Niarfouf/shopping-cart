@@ -1,9 +1,10 @@
 import { Outlet, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Cart from './Cart'
-export default function Nav() {
+export default function Nav({ deleteCartItems, cart }) {
     const [cartOpen, setCartOpen] = useState('no')
-    const [shoppingList, setShoppingList] = useState([])
+    const [dropDown, setDropDown] = useState('no')
+
     const [categories, setCategories] = useState([])
     function handleCart() {
         if (cartOpen === 'no') {
@@ -12,6 +13,7 @@ export default function Nav() {
             setCartOpen('no')
         }
     }
+
     useEffect(() => {
         async function fetchCategories() {
             try {
@@ -26,36 +28,62 @@ export default function Nav() {
         }
         fetchCategories()
     }, [])
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1)
+    }
     return (
         <>
-            <header id="navbar">
+            <header className="navbar">
                 <nav>
                     <ul>
                         <li>
                             <Link to={``}>Home</Link>
                         </li>
-                        <li className="drop-down">
+                        <li
+                            className="drop-down"
+                            onMouseEnter={() => setDropDown('yes')}
+                            onMouseLeave={() => setDropDown('no')}
+                        >
                             <button className="drop-button">Shop</button>
-                            <div className="drop-content">
+                            <div
+                                onClick={() => setDropDown('no')}
+                                className={
+                                    dropDown === 'yes'
+                                        ? 'drop-content show'
+                                        : 'drop-content'
+                                }
+                            >
                                 {categories.map((category, index) => {
                                     return (
                                         <Link
                                             key={index}
-                                            to={`shop/${category}`}
+                                            to={{
+                                                pathname: `shop/${category}`,
+                                            }}
                                         >
-                                            {category}
+                                            {capitalizeFirstLetter(category)}
                                         </Link>
                                     )
                                 })}
                             </div>
                         </li>
+                        <li>
+                            <button
+                                className="cart-button"
+                                onClick={handleCart}
+                            >
+                                Cart {Object.entries(cart).length}
+                            </button>
+                        </li>
                     </ul>
-                    <button onClick={handleCart}>
-                        Cart {shoppingList.length}
-                    </button>
                 </nav>
             </header>
-            <Cart cartInfo={cartOpen} />
+            <Cart
+                cartItems={cart}
+                cartInfo={cartOpen}
+                handleCart={handleCart}
+                deleteCartItems={deleteCartItems}
+            />
             <main id="content">
                 <Outlet />
             </main>
