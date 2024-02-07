@@ -42,8 +42,11 @@ nav {
 ul {
     display: flex;
     gap: 2rem;
-    padding: 1rem;
-    align-items: center;
+    padding: 0.8rem 1rem 1.2rem 1rem;
+    align-items: end;
+}
+sup {
+    font-family: 'Fredericka the Great', 'Roboto', sans-serif;
 }
 .right-arrow,
 .left-arrow {
@@ -160,6 +163,7 @@ main {
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    min-width: calc(2 / 3 * 100vw);
 }
 img {
     height: 150px;
@@ -173,7 +177,7 @@ img {
     flex: auto;
     gap: 3rem;
 
-    padding: 0 4rem 2rem 4rem;
+    padding: 2rem;
     justify-content: center;
 }
 .card {
@@ -189,7 +193,7 @@ img {
     box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.493);
 }
 h2 {
-    margin: 2rem;
+    margin-top: 2rem;
     font-family: 'Fredericka the Great', 'Roboto', sans-serif;
     color: brown;
     background-color: white;
@@ -232,21 +236,36 @@ label {
     border-radius: 0.5rem;
     font-size: 1.5rem;
 }
-.cart {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    border-radius: 1rem;
-    min-width: 70px;
-    background-color: rgb(255, 175, 192);
-    padding: 10px;
-    gap: 10px;
-    visibility: hidden;
-    opacity: 0;
-}
+
 .show {
     visibility: visible;
     opacity: 1;
     z-index: 10;
-    transition: all 200ms ease-in-out;
+    transition: all 400ms ease-in-out;
+}
+.total-cart {
+    margin: 2rem;
+    border: 1px solid brown;
+    align-self: baseline;
+
+    flex-shrink: 0;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.493);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: sticky;
+    top: 2rem;
+    right: 2rem;
+}
+.total-price {
+    font-size: 1.2rem;
+    font-family: 'Fredericka the Great', 'Roboto', sans-serif;
+    color: brown;
+}
+.confirm-cart {
+    color: brown;
+    margin-top: 0.5rem;
 }

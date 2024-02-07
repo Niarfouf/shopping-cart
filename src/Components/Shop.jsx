@@ -25,7 +25,7 @@ export default function Shop({ addCartItems }) {
     }
     return (
         <>
-            <div className={`shop ${category}`}>
+            <div className="shop">
                 <h2>{capitalizeFirstLetter(category)}</h2>
                 <div className="item-cards">
                     {items.map((item) => {
@@ -34,6 +34,7 @@ export default function Shop({ addCartItems }) {
                                 key={item.id}
                                 item={item}
                                 addItemInList={addCartItems}
+                                action={'Add'}
                             ></Card>
                         )
                     })}

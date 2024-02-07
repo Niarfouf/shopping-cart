@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './Error'
-import Nav from './Nav'
-import Homepage from './Homepage'
-import Shop from './Shop'
+import Nav from './Components/Nav'
+import Homepage from './Components/Homepage'
+import Shop from './Components/Shop'
+import Cart from './Components/Cart'
 import './index.css'
 
 const Router = () => {
@@ -44,13 +45,22 @@ const Router = () => {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <Nav deleteCartItems={updateCartItems} cart={cartItems} />,
+            element: <Nav cart={cartItems} />,
             errorElement: <ErrorPage />,
             children: [
                 { index: true, element: <Homepage /> },
                 {
                     path: 'shop/:category',
                     element: <Shop addCartItems={addCartItems} />,
+                },
+                {
+                    path: 'cart',
+                    element: (
+                        <Cart
+                            deleteCartItems={updateCartItems}
+                            cartItems={cartItems}
+                        />
+                    ),
                 },
             ],
         },

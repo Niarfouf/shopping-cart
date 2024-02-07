@@ -2,17 +2,9 @@ import { Outlet, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Cart from './Cart'
 export default function Nav({ deleteCartItems, cart }) {
-    const [cartOpen, setCartOpen] = useState('no')
     const [dropDown, setDropDown] = useState('no')
 
     const [categories, setCategories] = useState([])
-    function handleCart() {
-        if (cartOpen === 'no') {
-            setCartOpen('yes')
-        } else {
-            setCartOpen('no')
-        }
-    }
 
     useEffect(() => {
         async function fetchCategories() {
@@ -68,22 +60,25 @@ export default function Nav({ deleteCartItems, cart }) {
                             </div>
                         </li>
                         <li>
-                            <button
-                                className="cart-button"
-                                onClick={handleCart}
+                            <Link
+                                to={{
+                                    pathname: `cart`,
+                                }}
                             >
-                                Cart {Object.entries(cart).length}
-                            </button>
+                                Cart{' '}
+                                <sup>
+                                    {Object.entries(cart).reduce(
+                                        (acc, current) =>
+                                            acc + current[1].quantity,
+                                        0
+                                    )}
+                                </sup>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
             </header>
-            <Cart
-                cartItems={cart}
-                cartInfo={cartOpen}
-                handleCart={handleCart}
-                deleteCartItems={deleteCartItems}
-            />
+
             <main id="content">
                 <Outlet />
             </main>

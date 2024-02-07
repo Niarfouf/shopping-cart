@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-export default function Card({ item, addItemInList, quantity = 0 }) {
+export default function Card({ item, addItemInList, quantity = 0, action }) {
     const [input, setInput] = useState(0)
     function left() {
         setInput((input) => (input > 0 ? input - 1 : input))
@@ -53,10 +53,13 @@ export default function Card({ item, addItemInList, quantity = 0 }) {
                             className="add-button"
                             onClick={() => addItemInList(item, input)}
                         >
-                            Add
+                            {action}
                         </button>
                     </div>
-                    <p className="price">{item.price}€</p>
+                    <p className="price">
+                        {input} unit x {item.price}€ ={' '}
+                        {Math.round(item.price * input * 100) / 100} €
+                    </p>
                 </div>
             </div>
         </>
