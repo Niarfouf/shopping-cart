@@ -7,7 +7,7 @@ import Shop from './Components/Shop'
 import Cart from './Components/Cart'
 import './index.css'
 
-const Router = () => {
+export default function Router() {
     const [cartItems, setCartItems] = useState({})
     function addCartItems(item, quantity) {
         if (quantity > 0) {
@@ -68,5 +68,3 @@ const Router = () => {
 
     return <RouterProvider router={router} />
 }
-
-export default Router

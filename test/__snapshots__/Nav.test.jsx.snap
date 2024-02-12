@@ -1,0 +1,68 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Nav > render snapshot 1`] = `
+<div>
+  <header
+    class="navbar"
+  >
+    <nav>
+      <ul>
+        <li>
+          <a
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li
+          class="drop-down"
+        >
+          <button
+            class="drop-button"
+          >
+            Shop
+          </button>
+          <div
+            class="drop-content"
+          >
+            <a
+              href="/shop/electronics"
+            >
+              Electronics
+            </a>
+            <a
+              href="/shop/jewelery"
+            >
+              Jewelery
+            </a>
+            <a
+              href="/shop/men's clothing"
+            >
+              Men's clothing
+            </a>
+            <a
+              href="/shop/women's clothing"
+            >
+              Women's clothing
+            </a>
+          </div>
+        </li>
+        <li>
+          <a
+            href="/cart"
+          >
+            Cart
+             
+            <sup>
+              3
+            </sup>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main
+    id="content"
+  />
+</div>
+`;

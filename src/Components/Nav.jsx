@@ -1,23 +1,22 @@
 import { Outlet, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import Cart from './Cart'
-export default function Nav({ deleteCartItems, cart }) {
+
+export default function Nav({ cart }) {
     const [dropDown, setDropDown] = useState('no')
 
     const [categories, setCategories] = useState([])
-
-    useEffect(() => {
-        async function fetchCategories() {
-            try {
-                const response = await fetch(
-                    'https://fakestoreapi.com/products/categories'
-                )
-                const data = await response.json()
-                setCategories(data)
-            } catch (e) {
-                console.error(e)
-            }
+    async function fetchCategories() {
+        try {
+            const response = await fetch(
+                'https://fakestoreapi.com/products/categories'
+            )
+            const data = await response.json()
+            setCategories(data)
+        } catch (e) {
+            console.error(e)
         }
+    }
+    useEffect(() => {
         fetchCategories()
     }, [])
     function capitalizeFirstLetter(string) {

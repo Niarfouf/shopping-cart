@@ -1,0 +1,173 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Nav > render snapshot 1`] = `
+<div>
+  <div
+    class="shop"
+  >
+    <h2>
+      Electronics
+    </h2>
+    <div
+      class="item-cards"
+    >
+      <div
+        class="card"
+      >
+        <img
+          alt="testTitle1"
+          class="item-image"
+          src="https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
+        />
+        <h3
+          class="title"
+        >
+          testTitle1
+        </h3>
+        <div>
+          <div
+            class="add-container"
+          >
+            <label
+              for="0"
+            >
+              Quantity :
+            </label>
+            <button
+              class="left-arrow-input"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  menu-left
+                </title>
+                <path
+                  d="M14,7L9,12L14,17V7Z"
+                />
+              </svg>
+            </button>
+            <input
+              id="0"
+              inputmode="numeric"
+              name="quantity"
+              type="text"
+              value="0"
+            />
+            <button
+              class="right-arrow-input"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  menu-right
+                </title>
+                <path
+                  d="M10,17L15,12L10,7V17Z"
+                />
+              </svg>
+            </button>
+            <button
+              class="add-button"
+            >
+              Add
+            </button>
+          </div>
+          <p
+            class="price"
+          >
+            0
+             unit x 
+            5.5
+            € =
+             
+            0
+             €
+          </p>
+        </div>
+      </div>
+      <div
+        class="card"
+      >
+        <img
+          alt="testTitle2"
+          class="item-image"
+          src="https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
+        />
+        <h3
+          class="title"
+        >
+          testTitle2
+        </h3>
+        <div>
+          <div
+            class="add-container"
+          >
+            <label
+              for="1"
+            >
+              Quantity :
+            </label>
+            <button
+              class="left-arrow-input"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  menu-left
+                </title>
+                <path
+                  d="M14,7L9,12L14,17V7Z"
+                />
+              </svg>
+            </button>
+            <input
+              id="1"
+              inputmode="numeric"
+              name="quantity"
+              type="text"
+              value="0"
+            />
+            <button
+              class="right-arrow-input"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  menu-right
+                </title>
+                <path
+                  d="M10,17L15,12L10,7V17Z"
+                />
+              </svg>
+            </button>
+            <button
+              class="add-button"
+            >
+              Add
+            </button>
+          </div>
+          <p
+            class="price"
+          >
+            0
+             unit x 
+            10
+            € =
+             
+            0
+             €
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
